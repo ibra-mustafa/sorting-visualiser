@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <nav className="bg-grey-300 w-screen grid grid-flow-row">Nav</nav>
+      <nav className="bg-grey-300 sm:row-span-2 row-span-3 w-screen grid grid-flow-row">Nav</nav>
       <body>{children}</body>
     </html>
   )
