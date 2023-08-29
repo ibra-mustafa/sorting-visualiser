@@ -13,6 +13,10 @@ export default function RootLayout({
           <button className='border border-teal-100 p-2 '>Insertion Sort</button>
           <button className='underline border border-teal-100 p-2 '>Sort !</button>
         </div>
+        <div className="flex flex-col items-center">
+          <input type="range" name='itemsAmount' id='itemsAmount' className='w-full max-w-xl'  />
+          <input type="range" name='delay' id='delay'  className='w-full max-w-xl' />
+        </div>
         </nav>
       {children}</body>
     </html>
