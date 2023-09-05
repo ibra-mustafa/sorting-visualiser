@@ -14,8 +14,10 @@ export default function RootLayout({
           <button className='underline border border-teal-100 p-2 '>Sort !</button>
         </div>
         <div className="flex flex-col items-center">
-          <input type="range" name='itemsAmount' id='itemsAmount' className='w-full max-w-xl'  />
-          <input type="range" name='delay' id='delay'  className='w-full max-w-xl' />
+          <label htmlFor='itemsAmount'>Array Length: 25</label>
+          <input defaultValue={25} min={1} type="range" name='itemsAmount' id='itemsAmount' className='w-full max-w-xl'  />
+         <label htmlFor="range">Delay: 15</label>
+          <input defaultValue={15} min={3} type="range" name='delay' id='delay'  className='w-full max-w-xl' />
         </div>
         </nav>
       {children}</body>
