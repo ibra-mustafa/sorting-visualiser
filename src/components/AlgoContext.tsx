@@ -1,8 +1,9 @@
-import React from 'react'
-
-function AlgoContext() {
+interface props {
+    children: React.ReactNode
+}
+const AlgoContext : React.FC<props> = ({children})=> {
   return (
-    <div>AlgoContext</div>
+    <div>{children}</div>
   )
 }
 
