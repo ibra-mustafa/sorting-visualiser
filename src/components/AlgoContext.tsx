@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react"
+import { createContext, useState } from "react"
 
 interface props {
     children: React.ReactNode
@@ -9,7 +9,7 @@ interface Settings {
   arrayLen : number;
   delay: number;
 }
-const initialVal = {
+const initialVal: Settings= {
   sortType: 'merge srort',
   arrayLen : 25,
   delay: 15,
@@ -19,6 +19,9 @@ interface SettingsContext {
   settings: Settings;
   setSettings? : React.Dispatch<React.SetStateAction<Settings>>
 }
+const context = createContext<SettingsContext>({
+  settings:initialVal
+})
 const AlgoContext : React.FC<props> = ({children})=> {
   const [settings,setSettings] = useState<Settings>()
   return (
