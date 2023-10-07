@@ -19,13 +19,13 @@ interface SettingsContext {
   settings: Settings;
   setSettings? : React.Dispatch<React.SetStateAction<Settings>>
 }
-const context = createContext<SettingsContext>({
+const Context = createContext<SettingsContext>({
   settings:initialVal
 })
 const AlgoContext : React.FC<props> = ({children})=> {
-  const [settings,setSettings] = useState<Settings>()
+  const [settings,setSettings] = useState<Settings>(initialVal)
   return (
-    <div>{children}</div>
+    <Context.Provider value={{settings, setSettings}}>{children}</Context.Provider>
   )
 }
 
