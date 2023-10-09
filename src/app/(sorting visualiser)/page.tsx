@@ -1,6 +1,10 @@
+import AlgoContext from "@/components/AlgoContext";
+
 function page() {
   return (
-    <div>page</div>
+    <AlgoContext>
+      <div>page</div>
+    </AlgoContext>
   )
 }
 
