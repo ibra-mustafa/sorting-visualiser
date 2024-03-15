@@ -1,5 +1,5 @@
 "use client";
-import { Algo, Context } from "@/components/AlgoContext";
+import { Algo, Context } from "@/app/(sorting visualiser)/context/Visualiser";
 import "@/global.css";
 import { useContext } from "react";
 export default function RootLayout({

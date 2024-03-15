@@ -1,4 +1,4 @@
-import AlgoContext from "@/components/AlgoContext";
+import AlgoContext from "@/app/(sorting visualiser)/context/Visualiser";
 
 function page() {
   return (
