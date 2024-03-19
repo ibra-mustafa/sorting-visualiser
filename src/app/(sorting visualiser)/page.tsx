@@ -1,11 +1,10 @@
-import AlgoContext from "@/app/(sorting visualiser)/context/Visualiser";
+"use client";
+import { useSortingAlgorithmsContext } from "@/context/Visualiser";
+import { useEffect } from "react";
 
-function page() {
-  return (
-    <AlgoContext>
-      <div>page</div>
-    </AlgoContext>
-  )
+function Home() {
+  const { arrayToSort } = useSortingAlgorithmsContext();
+  return <main className="absolute"></main>;
 }
 
-export default page
+export default Home;
