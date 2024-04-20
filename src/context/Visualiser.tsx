@@ -27,7 +27,7 @@ export const SortingAlgoProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [arrayToSort, setArrayToSort] = useState<number[]>([]);
+  const [arrayToSort, setArrayToSort] = useState<number[]>([100, 30, 200]);
   const [sortingAlgo, setSortingAlgo] = useState<SortingAlgoType>("bubble");
   const [isSortingAlgo, setIsSortingAlgo] = useState<boolean>(false);
   const [delay, setDelay] = useState<number>(0);

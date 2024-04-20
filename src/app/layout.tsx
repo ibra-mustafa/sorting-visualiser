@@ -1,8 +1,6 @@
-"use client";
 import { SortingAlgoProvider } from "@/context/Visualiser";
 import "@/global.css";
-import { useContext } from "react";
-export default function RootLayout({
+export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;

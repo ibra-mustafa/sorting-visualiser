@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.default-line-color {
+  background-color: theme("colors.system.purple50");
+}
+
+.changed-line-color {
+  background-color: theme("colors.system.green60");
+}
