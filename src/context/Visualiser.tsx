@@ -34,7 +34,10 @@ export const SortingAlgoProvider = ({
   const [animationSpeed, setAnimationSpeed] = useState<number>(50);
   const [isAnimationFinished, setIsAnimationFinished] =
     useState<boolean>(false);
-  const resetArrAndAnimation = () => {};
+  const resetArrAndAnimation = () => {
+    const constextContainer = document.getElementById("content-container");
+    if (!constextContainer)  return;
+  };
   const runAnimation = () => {};
   const value = {
     arrayToSort,
