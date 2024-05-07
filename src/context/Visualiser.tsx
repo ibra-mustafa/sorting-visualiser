@@ -1,6 +1,7 @@
 "use client";
 import { SortingAlgoType } from "@/lib/types";
-import { createContext, use, useContext, useState } from "react";
+import { generateRandomFromInterval } from "@/lib/utils";
+import { createContext, use, useContext, useEffect, useState } from "react";
 
 interface SortingAlgoContextType {
   arrayToSort: number[];
@@ -34,9 +35,24 @@ export const SortingAlgoProvider = ({
   const [animationSpeed, setAnimationSpeed] = useState<number>(50);
   const [isAnimationFinished, setIsAnimationFinished] =
     useState<boolean>(false);
+  useEffect(() => {
+    resetArrAndAnimation();
+    window.addEventListener("resize", resetArrAndAnimation);
+  }, []);
   const resetArrAndAnimation = () => {
-    const constextContainer = document.getElementById("content-container");
-    if (!constextContainer)  return;
+    const contentContainer = document.getElementById("content-container");
+    if (!contentContainer) return;
+    const contentContainerWidth = contentContainer?.clientWidth;
+    const temporaryArr: number[] = [];
+    const linesNum = contentContainerWidth / 8;
+    const contentContainerHeight = contentContainer?.clientHeight;
+    const maxLineHeight = Math.max(contentContainerHeight - 420, 100);
+    for (let i = 0; i < linesNum; i++) {
+      temporaryArr.push(generateRandomFromInterval(35, maxLineHeight));
+    }
+    setArrayToSort(temporaryArr);
+    setIsAnimationFinished(false);
+    setIsSortingAlgo(false);
   };
   const runAnimation = () => {};
   const value = {

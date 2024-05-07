@@ -9,7 +9,7 @@ export default function MainLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Sorting Algorthms Visualiser</title>
       </head>
       <body>
         <SortingAlgoProvider>{children}</SortingAlgoProvider>
