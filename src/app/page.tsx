@@ -1,9 +1,11 @@
 "use client";
+import Slider from "@/components/input/slider";
 import { useSortingAlgorithmsContext } from "@/context/Visualiser";
 import { useEffect } from "react";
 
 function Page() {
-  const { arrayToSort, isSortingAlgo } = useSortingAlgorithmsContext();
+  const { arrayToSort, isSortingAlgo, animationSpeed, setAnimationSpeed } =
+    useSortingAlgorithmsContext();
   useEffect(() => {
     console.log(arrayToSort);
     console.log("isSortingAlgo");
@@ -16,8 +18,12 @@ function Page() {
             <h1 className="text-gray-300 text-2xl font-light hidden md:flex">
               Sorting Visualiser
             </h1>
-            <div className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
-              Controls
+            <div className="flex gap-4 items-center justify-center">
+              <Slider
+                isDisabled={isSortingAlgo}
+                value={animationSpeed}
+                handleChange={(e) => setAnimationSpeed(Number(e.target.value))}
+              />
             </div>
           </div>
           <div
