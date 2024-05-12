@@ -4,19 +4,19 @@ import React from "react";
 export const Select = ({
   options,
   defaultValue,
-  onChange,
+  handleChange,
   isDisabled = false,
 }: {
   options: SelectOptionsType[];
   defaultValue: string;
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   isDisabled?: boolean;
 }) => {
   return (
     <div className="inline-block relative w-48">
       <select
         disabled={isDisabled}
-        onChange={onChange}
+        onChange={handleChange}
         defaultValue={defaultValue}
         className="block appearance-none h-8 w-full bg-system-purple10 border-system-purple20 border px-4 py-1 pr-8 rounded-lg shadow leading-tight focus:outline-none focus:shadow-outline text-gray-300"
       >

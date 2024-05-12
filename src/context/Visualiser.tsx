@@ -19,7 +19,7 @@ interface SortingAlgoContextType {
   resetArrAndAnimation: () => void;
   runAnimation: () => void;
 }
-
+  
 const SortingAlgoContext = createContext<SortingAlgoContextType | undefined>(
   undefined
 );

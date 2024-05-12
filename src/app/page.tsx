@@ -1,15 +1,24 @@
 "use client";
-import Slider from "@/components/input/slider";
+import { Select } from "@/components/input/Select";
+import Slider from "@/components/input/Slider";
 import { useSortingAlgorithmsContext } from "@/context/Visualiser";
+import { SortingAlgoType } from "@/lib/types";
+import { algorithmOptions } from "@/lib/utils";
 import { useEffect } from "react";
 
 function Page() {
-  const { arrayToSort, isSortingAlgo, animationSpeed, setAnimationSpeed } =
-    useSortingAlgorithmsContext();
+  const {
+    setSortingAlgo,
+    sortingAlgo,
+    arrayToSort,
+    isSortingAlgo,
+    animationSpeed,
+    setAnimationSpeed,
+  } = useSortingAlgorithmsContext();
   useEffect(() => {
-    console.log(arrayToSort);
+    console.log(sortingAlgo);
     console.log("isSortingAlgo");
-  }, []);
+  }, [sortingAlgo]);
   return (
     <main className="absolute top-0 h-screen w-screen z-[-2] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#150229_1px)] bg-[size:40px_40px]">
       <div className="flex h-full justify-center flex-col">
@@ -24,6 +33,16 @@ function Page() {
                 value={animationSpeed}
                 handleChange={(e) => setAnimationSpeed(Number(e.target.value))}
               />
+              <Select
+                options={algorithmOptions}
+                defaultValue={sortingAlgo}
+                isDisabled={isSortingAlgo}
+                handleChange={(e) => {
+                  setSortingAlgo(e.target.value as SortingAlgoType);
+                }}
+              />
+              <button
+                onClick={() => {}}></button>
             </div>
           </div>
           <div
